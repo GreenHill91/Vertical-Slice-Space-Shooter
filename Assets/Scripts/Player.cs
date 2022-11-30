@@ -11,11 +11,13 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        //Getting keys, putting them into a Vector2
         keyMovement.x = Input.GetAxisRaw("Horizontal");
         keyMovement.y = Input.GetAxisRaw("Vertical");
 
-        Debug.Log(keyMovement);
+        //Debug.Log(keyMovement);
 
+        //Using the Vector2 to translate our transform
         transform.Translate(-keyMovement * speed);
 
     }
