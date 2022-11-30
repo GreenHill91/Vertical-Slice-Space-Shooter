@@ -25,5 +25,16 @@ public class Enemy : MonoBehaviour
         //Move to player    2D
         transform.position = Vector2.MoveTowards(EnemyLocation, PlayerLocation, speed);
 
+        Debug.Log(distance(EnemyLocation, PlayerLocation));
+    }
+    private float distance(Vector3 object1, Vector3 object2) //These Vector3s represent coordinates 
+    {
+        float firstpart = Mathf.Pow(object1.x - object2.x, 2);
+        float secondpart = Mathf.Pow(object1.y - object2.y, 2);
+        float thirdpart = Mathf.Pow(object1.z - object2.z, 2);
+
+        float Distance = Mathf.Sqrt(firstpart + secondpart + thirdpart); 
+
+        return Distance;
     }
 }
